@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item
+    android:id="@+id/menuProfil"
+    android:icon="@drawable/profil"
+    android:title="@string/profil"/>
+
+    <item
+        android:id="@+id/menuCours"
+        android:icon="@drawable/cours"
+        android:title="@string/cours"/>
+    <item
+        android:id="@+id/menuEcm"
+        android:icon="@drawable/ecm"
+        android:title="@string/ecm"/>
+
+
+    <item android:title="@string/autres">
+
+        <menu>
+            <item
+                android:id="@+id/menuDeconnection"
+                android:icon="@drawable/deco"
+                android:title="@string/deconnection"/>
+        </menu>
+
+    </item>
+
+</menu>
