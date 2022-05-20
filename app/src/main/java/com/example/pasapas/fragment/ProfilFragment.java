@@ -1,22 +1,31 @@
 package com.example.pasapas.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.pasapas.R;
+import com.example.pasapas.adapter.AdapterEnfant;
+import com.example.pasapas.databinding.ListEnfantBinding;
+import com.example.pasapas.model.Users;
+import com.example.pasapas.tools.Tools;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ProfilFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class ProfilFragment extends Fragment {
 
+    ListEnfantBinding binding;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -25,6 +34,9 @@ public class ProfilFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ListView listView;
+
 
     public ProfilFragment() {
         // Required empty public constructor
@@ -61,6 +73,11 @@ public class ProfilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profil, container, false);
+        View view = inflater.inflate(R.layout.fragment_profil, container, false);
+        Users users = Tools.getUser(this.getActivity().getSharedPreferences("userIdentity", Context.MODE_PRIVATE));
+        listView = view.findViewById(R.id.listview);
+        listView.setAdapter(new AdapterEnfant(getContext(),users.getEnfants()));
+        return view;
     }
+
 }

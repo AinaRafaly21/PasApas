@@ -39,4 +39,13 @@ public class ResponseFormat {
     public void setData(JsonObject data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "ResponseFormat{" +
+                "message='" + message + '\'' +
+                ", code=" + code +
+                ", data=" + data +
+                '}';
+    }
 }

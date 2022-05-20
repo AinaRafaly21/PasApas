@@ -6,9 +6,30 @@
     tools:context=".fragment.CoursFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Cours Fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cours 1"
+        android:textSize="26sp" />
 
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    </RelativeLayout>
 </FrameLayout>
