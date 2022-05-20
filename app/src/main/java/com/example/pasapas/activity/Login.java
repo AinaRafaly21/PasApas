@@ -50,8 +50,7 @@ public class Login extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //singin(email.getText().toString(), password.getText().toString());
-                redirect();
+                singin(email.getText().toString(), password.getText().toString());
             }
         });
     }
@@ -71,6 +70,7 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<ResponseFormat> call, Response<ResponseFormat> response) {
                             progressDialog.dismiss(); //dismiss progress dialog
+                            System.out.println(response.body().toString());
                             if(response.body().getCode() == 200) {
 //                            text.setText(response.body().code);
                                 System.out.println("Body = " + response.body().getData().toString());
