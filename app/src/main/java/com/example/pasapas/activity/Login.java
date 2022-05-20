@@ -59,7 +59,7 @@ public class Login extends AppCompatActivity {
         final ProgressDialog progressDialog = new ProgressDialog(Login.this);
         progressDialog.setCancelable(false); // set cancelable to false
         progressDialog.setTitle("Connexion"); //set Title
-        progressDialog.setMessage("Chargement"); // set message
+        progressDialog.setMessage("Chargement ... "); // set message
         progressDialog.show(); // show progress dialog
         if(Tools.validateMail(email) && Tools.validatePassword(password)) {
             System.out.println("Okee" + email);
