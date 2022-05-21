@@ -19,6 +19,11 @@ public class Enfants implements Serializable {
         this.niveau = niveau;
     }
 
+    public Enfants(String nom, Integer age) {
+        this.nom = nom;
+        this.age = age;
+    }
+
     public String getNom() {
         return nom;
     }

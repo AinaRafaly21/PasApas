@@ -8,7 +8,7 @@
     android:background="@drawable/elves">
 
     <EditText
-        android:id="@+id/emailAddress3"
+        android:id="@+id/inputAge"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.612" />
 
     <EditText
-        android:id="@+id/emailAddress2"
+        android:id="@+id/inputNom"
         android:layout_width="289dp"
         android:layout_height="48dp"
         android:ems="10"

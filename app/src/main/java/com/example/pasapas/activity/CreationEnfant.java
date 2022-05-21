@@ -2,6 +2,7 @@ package com.example.pasapas.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.pasapas.R;
+import com.example.pasapas.model.Enfants;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,11 +25,12 @@ public class CreationEnfant extends AppCompatActivity {
     }
 
     void redirect(){
-        //Intent intent = new Intent(CreationEnfant.this, AjoutEnfant.class);
-       // startActivity(intent);
+        Intent intent = new Intent(CreationEnfant.this, EnfantsActivity.class);
+        startActivity(intent);
     }
 
-    void add() {
+    void add(String nom, String age) {
+        Enfants enfants = new Enfants(nom, Integer.valueOf(age));
 
     }
 }
