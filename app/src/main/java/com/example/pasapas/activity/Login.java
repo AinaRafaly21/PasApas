@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.pasapas.MainActivity;
 import com.example.pasapas.R;
+import com.example.pasapas.fragment.EnfantsFragment;
 import com.example.pasapas.model.UserLogin;
 import com.example.pasapas.model.Users;
 import com.example.pasapas.service.UserService;
@@ -104,7 +105,7 @@ public class Login extends AppCompatActivity {
     }
 
     void redirect(){
-        Intent intent = new Intent(Login.this, MainActivity.class);
+        Intent intent = new Intent(Login.this, EnfantsActivity.class);
         startActivity(intent);
     }
 

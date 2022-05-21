@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Menu">
         <activity
+            android:name=".activity.EnfantsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.CreationEnfant"
             android:exported="false" />
         <activity
