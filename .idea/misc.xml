@@ -6,7 +6,6 @@
         <entry key="..\:/Menu/app/src/main/res/layout/activity_main.xml" value="0.21875" />
         <entry key="..\:/Menu/app/src/main/res/layout/layout_navigation_header.xml" value="0.23645833333333333" />
         <entry key="..\:/Menu/app/src/main/res/menu/navigation_menu.xml" value="0.22395833333333334" />
-        <entry key="..\:/PasApas/app/src/main/res/layout/activity_creation_enfant.xml" value="0.14719202898550723" />
         <entry key="..\:/PasApas/app/src/main/res/layout/activity_inscription.xml" value="0.23645833333333333" />
         <entry key="..\:/PasApas/app/src/main/res/layout/activity_login.xml" value="0.22327898550724637" />
         <entry key="..\:/PasApas/app/src/main/res/layout/activity_main.xml" value="0.23645833333333333" />
@@ -15,15 +14,19 @@
         <entry key="..\:/PasApas/app/src/main/res/layout/fragment_profil.xml" value="0.23645833333333333" />
         <entry key="..\:/PasApas/app/src/main/res/layout/layout_navigation_header.xml" value="0.1" />
         <entry key="..\:/PasApas/app/src/main/res/menu/navigation_menu.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/activity_creation_enfant.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/activity_enfants.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/activity_login.xml" value="0.2151268115942029" />
+        <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/fragment_cours.xml" value="0.2151268115942029" />
-        <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/fragment_profil.xml" value="0.2" />
+        <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/fragment_enfants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/fragment_profil.xml" value="0.16" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/list_enfant.xml" value="0.2" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
