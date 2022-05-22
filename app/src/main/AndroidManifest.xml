@@ -13,7 +13,8 @@
         android:theme="@style/Theme.Menu">
         <activity
             android:name=".activity.VideoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".activity.CoursActivity"
             android:exported="false" />
