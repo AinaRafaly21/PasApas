@@ -8,6 +8,7 @@ import android.util.Patterns;
 
 import com.example.pasapas.model.Users;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,10 +22,11 @@ public class Tools {
         return (!TextUtils.isEmpty(text) && Patterns.EMAIL_ADDRESS.matcher(text).matches());
     }
 
+
     public static ArrayList<Categories> categories() {
         ArrayList<Categories> array = new ArrayList<Categories>();
         array.add(new Categories("Moins de 3 ans", 0, 3));
-        array.add(new Categories("Moins de 3 ans", 0, 3));
+        array.add(new Categories("3 à 6 ans", 3, 6));
         return array;
     }
 
@@ -35,5 +37,19 @@ public class Tools {
         return gson.fromJson(s, Users.class);
 //        return (Users) intent.getSerializableExtra("users");
     }
+
+    public static void setUser(SharedPreferences sharedPreferences, JsonObject users) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("user", users.toString());
+        editor.apply();
+    }
+
+    public static void setKids(SharedPreferences sharedPreferences, Integer index) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("index", index);
+        editor.apply();
+    }
+
+//    public static boolean passQuiz()
 }
 

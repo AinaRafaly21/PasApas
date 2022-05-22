@@ -108,7 +108,8 @@ public class Login extends AppCompatActivity {
     }
 
     void saveToken(String token, JsonObject user) {
-        token = "Bearer ${token}";
+        token = "Bearer " + token;
+        System.out.println("*** TOKEN LOGIN = " +  token);
         SharedPreferences sharedPreferences= this.getSharedPreferences("userIdentity", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("token", token);

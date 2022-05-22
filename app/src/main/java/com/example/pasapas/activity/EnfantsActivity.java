@@ -6,6 +6,7 @@ import com.example.pasapas.MainActivity;
 import com.example.pasapas.R;
 import com.example.pasapas.adapter.AdapterEnfant;
 import com.example.pasapas.databinding.ActivityEnfantsBinding;
+import com.example.pasapas.model.Enfants;
 import com.example.pasapas.model.Users;
 import com.example.pasapas.tools.Tools;
 
@@ -16,6 +17,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class EnfantsActivity extends AppCompatActivity {
     ActivityEnfantsBinding binding;
     @Override
@@ -25,13 +28,15 @@ public class EnfantsActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         Users users = Tools.getUser(getSharedPreferences("userIdentity", Context.MODE_PRIVATE));
+        if(users.getEnfants() == null) users.setEnfants(new ArrayList<Enfants>());
         AdapterEnfant adapter = new AdapterEnfant(EnfantsActivity.this, users.getEnfants());
         binding.listview.setAdapter(adapter);
         binding.listview.setClickable(true);
         binding.listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                details();
+                System.out.println("Position = " + i);
+                details(i);
             }
         });
         Button button = findViewById(R.id.button);
@@ -48,8 +53,9 @@ public class EnfantsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    void details(){
+    void details(int i){
         Intent intent = new Intent(EnfantsActivity.this, MainActivity.class);
+        Tools.setKids(getSharedPreferences("userIdentity", Context.MODE_PRIVATE), i);
         startActivity(intent);
     }
 }

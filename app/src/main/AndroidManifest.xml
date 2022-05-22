@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Menu">
         <activity
+            android:name=".activity.VideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CoursActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.EnfantsActivity"
             android:exported="false" />
         <activity

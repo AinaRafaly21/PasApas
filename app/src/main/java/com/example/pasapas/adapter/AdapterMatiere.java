@@ -11,30 +11,28 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.pasapas.R;
-import com.example.pasapas.model.Enfants;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class AdapterEnfant extends ArrayAdapter<Enfants> {
 
-    public AdapterEnfant(Context context, ArrayList<Enfants> array){
-        super(context, R.layout.list_enfant, R.id.enfants, array);
+public class AdapterMatiere extends ArrayAdapter<String> {
 
+    public AdapterMatiere(Context context, List<String> array) {
+        super(context, R.layout.list_matiere, R.id.matieres, array);
+        System.out.println("Array == " + array.toString());
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Enfants enfants = getItem(position);
+        String mat = getItem(position);
         if(convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_enfant, parent,false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_matiere, parent,false);
         }
 
-        TextView nom = convertView.findViewById(R.id.nom);
-        TextView age = convertView.findViewById(R.id.age);
-
-        nom.setText(enfants.getNom());
-        age.setText(enfants.getAge().toString() + " ans");
+        TextView textView = convertView.findViewById(R.id.nomMatiere);
+        textView.setText(mat);
         return super.getView(position, convertView, parent);
     }
 }

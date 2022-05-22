@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Users implements Serializable {
-    String _id;
     String email;
     String motdepasse;
     String token;
@@ -13,8 +12,7 @@ public class Users implements Serializable {
     public Users() {
     }
 
-    public Users(String _id, String email, String motdepasse, String token, ArrayList<Enfants> enfants) {
-        this._id = _id;
+    public Users(String email, String motdepasse, String token, ArrayList<Enfants> enfants) {
         this.email = email;
         this.motdepasse = motdepasse;
         this.token = token;
@@ -54,22 +52,15 @@ public class Users implements Serializable {
     }
 
     public void  addEnfant(Enfants enfants) {
+        if(this.getEnfants() == null) this.setEnfants(new ArrayList<Enfants>());
         this.enfants.add(enfants);
     }
 
-    public String get_id() {
-        return _id;
-    }
-
-    public void set_id(String _id) {
-        this._id = _id;
-    }
 
     @Override
     public String toString() {
         return "Users{" +
-                "_id='" + _id + '\'' +
-                ", email='" + email + '\'' +
+                "email='" + email + '\'' +
                 ", motdepasse='" + motdepasse + '\'' +
                 ", token='" + token + '\'' +
                 ", enfants=" + enfants +
