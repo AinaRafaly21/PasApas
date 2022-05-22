@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/coursPropos"
@@ -28,6 +29,7 @@
             android:textSize="22sp"
             android:textStyle="italic"
             android:textColor="@color/black"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
@@ -35,7 +37,6 @@
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf=""
         android:layout_marginTop="60dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
