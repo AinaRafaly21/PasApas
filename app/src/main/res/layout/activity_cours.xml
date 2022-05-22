@@ -9,7 +9,8 @@
         android:id="@+id/titleLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#00BEF2">
         <TextView
             android:id="@+id/textCours"
             android:layout_width="wrap_content"
@@ -17,6 +18,7 @@
             android:textSize="26sp"
             android:layout_marginTop="12dp"
             android:text="Cours de Connaissances"
+            android:textColor="@color/white"
             android:layout_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

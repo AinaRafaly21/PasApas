@@ -33,7 +33,7 @@ public class AdapterCours extends ArrayAdapter<Cours> {
         TextView categorie = convertView.findViewById(R.id.catCours);
 
         niveau.setText(cours.getTitre());
-        categorie.setText(cours.getNom() + " - " + cours.getNiveau());
+        categorie.setText(cours.getNom() + " - Niveau " + cours.getNiveau());
 
         return super.getView(position, convertView, parent);
     }
