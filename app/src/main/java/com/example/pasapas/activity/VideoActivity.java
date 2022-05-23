@@ -1,10 +1,14 @@
 package com.example.pasapas.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.pasapas.R;
 import com.example.pasapas.model.Cours;
 import com.example.pasapas.tools.ParamQuiz;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,26 +49,18 @@ public class VideoActivity extends AppCompatActivity {
     }
 
     void displayVideo(Cours cours) {
-        WebView webView = findViewById(R.id.webview);
-        String html = "<body style=\"width: 100%; height: 100%; overflow:hidden; overflow-x: hidden; overflow-y: hidden; position:absolute; \"> " ;
-        html += "<iframe width=\"360\" height=\"315\" src=\""+
-                cours.getUrl_video() +
-                "\" title=\""+ cours.getTitre() +
-                "\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen\" allowfullscreen></iframe>";
-        html += "</body>";
-        webView.setWebViewClient(new WebViewClient() {
+        YouTubePlayerView youTubePlayerView = findViewById(R.id.playerView);
+        getLifecycle().addObserver(youTubePlayerView);
+
+        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                return false;
+            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                super.onReady(youTubePlayer);
+                youTubePlayer.loadVideo(cours.getUrl_video(), 0);
+                progressIndicator.hide();
+                youTubePlayerView.setVisibility(View.VISIBLE);
             }
         });
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-//        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setUseWideViewPort(true);
-        webView.loadData(html, "text/html", "utf-8");
-        progressIndicator.hide();
-        webView.setVisibility(View.VISIBLE);
     }
 
     void redirect(Cours cours) {
