@@ -27,12 +27,4 @@ public class ParamCours {
     public void setCategorie(String categorie) {
         this.categorie = categorie;
     }
-
-    @Override
-    public String toString() {
-        return "ParamCours{" +
-                "nom='" + nom + '\'' +
-                ", categorie='" + categorie + '\'' +
-                '}';
-    }
 }

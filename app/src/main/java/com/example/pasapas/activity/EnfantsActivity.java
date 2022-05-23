@@ -26,7 +26,6 @@ public class EnfantsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityEnfantsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         Users users = Tools.getUser(getSharedPreferences("userIdentity", Context.MODE_PRIVATE));
         if(users.getEnfants() == null) users.setEnfants(new ArrayList<Enfants>());
         AdapterEnfant adapter = new AdapterEnfant(EnfantsActivity.this, users.getEnfants());
@@ -35,7 +34,6 @@ public class EnfantsActivity extends AppCompatActivity {
         binding.listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                System.out.println("Position = " + i);
                 details(i);
             }
         });

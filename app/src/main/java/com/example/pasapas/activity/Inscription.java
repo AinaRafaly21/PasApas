@@ -60,11 +60,7 @@ public class Inscription extends AppCompatActivity {
                     new Callback<ResponseFormat>() {
                         @Override
                         public void onResponse(Call<ResponseFormat> call, Response<ResponseFormat> response) {
-//                        progressDialog.dismiss(); //dismiss progress dialog
                             if(response.body().getCode() == 200) {
-//                            text.setText(response.body().code);
-//                                System.out.println(response.body().getData().toString());
-//                                Toast.makeText(Inscription.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
                                 progressDialog.dismiss();
                                 notif();
                                 redirect();
@@ -99,7 +95,6 @@ public class Inscription extends AppCompatActivity {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel("educA", name, importance);
             channel.setDescription(description);
-
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
@@ -110,7 +105,6 @@ public class Inscription extends AppCompatActivity {
         Intent notificationIntent = new Intent(this, Login.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "educA")
                 .setSmallIcon(R.drawable.logo)
                 .setContentTitle("Pas à pas")
@@ -118,7 +112,6 @@ public class Inscription extends AppCompatActivity {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true);
-
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         notificationManager.notify(100 , builder.build());
     }

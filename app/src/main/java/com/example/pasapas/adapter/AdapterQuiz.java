@@ -1,6 +1,5 @@
 package com.example.pasapas.adapter;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -34,18 +33,15 @@ public class AdapterQuiz extends ArrayAdapter<Qcm> {
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_quiz, parent,false);
         }
-
         ImageView imageView = convertView.findViewById(R.id.imageQuiz);
         Glide.with(convertView)
                 .load(qcm.getImage())
                 .placeholder(R.drawable.fond)
                 .override(300, 200)
                 .into(imageView);
-
         TextView textView = convertView.findViewById(R.id.reponse);
         TextView question = convertView.findViewById(R.id.question);
         question.setText(qcm.getQuestion());
-
         btn1 = convertView.findViewById(R.id.btn1);
         btn1.setText(qcm.getChoix().get(0));
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -70,14 +66,10 @@ public class AdapterQuiz extends ArrayAdapter<Qcm> {
                 response(qcm, qcm.getChoix().get(2), textView);
             }
         });
-
-
         return super.getView(position, convertView, parent);
     }
 
     void response(Qcm qcm, String choix, View view) {
-//        textView.setVisibility(View.VISIBLE);
-        System.out.println("Reponse = " + qcm.getReponse() + " / Choix = " + choix);
         Dialog dialog = new Dialog(view.getContext());
         if(qcm.getReponse().compareToIgnoreCase(choix) == 0) dialog.setContentView(R.layout.true_layout);
         else dialog.setContentView(R.layout.false_layout);

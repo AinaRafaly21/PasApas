@@ -55,16 +55,5 @@ public class Users implements Serializable {
         if(this.getEnfants() == null) this.setEnfants(new ArrayList<Enfants>());
         this.enfants.add(enfants);
     }
-
-
-    @Override
-    public String toString() {
-        return "Users{" +
-                "email='" + email + '\'' +
-                ", motdepasse='" + motdepasse + '\'' +
-                ", token='" + token + '\'' +
-                ", enfants=" + enfants +
-                '}';
-    }
 }
 

@@ -50,13 +50,4 @@ public class Qcm {
         this.choix = choix;
     }
 
-    @Override
-    public String toString() {
-        return "Qcm{" +
-                "image='" + image + '\'' +
-                ", question='" + question + '\'' +
-                ", reponse='" + reponse + '\'' +
-                ", choix=" + choix +
-                '}';
-    }
 }

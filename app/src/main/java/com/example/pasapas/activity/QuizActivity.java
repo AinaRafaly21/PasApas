@@ -30,7 +30,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class QuizActivity extends AppCompatActivity {
-
     CircularProgressIndicator progressIndicator;
     ActivityQuizBinding binding;
 
@@ -60,10 +59,7 @@ public class QuizActivity extends AppCompatActivity {
                 new Callback<ResponseFormat>() {
                     @Override
                     public void onResponse(Call<ResponseFormat> call, Response<ResponseFormat> response) {
-                        System.out.println(response.body().toString());
                         if(response.body().getCode() == 200) {
-//                            text.setText(response.body().code);
-                            System.out.println("Body = " + response.body().getData().toString());
                             Gson gson = new Gson();
                             Quiz quiz = gson.fromJson(response.body().getData(), Quiz.class);
                             progressIndicator.hide();
@@ -77,7 +73,6 @@ public class QuizActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<ResponseFormat> call, Throwable t) {
                         // if error occurs in network transaction then we can get the error in this method.
-                        System.out.println(t.getMessage());
                         progressIndicator.hide();
                         Toast.makeText(QuizActivity.this, t.getMessage(), Toast.LENGTH_LONG).show(); //dismiss progress dialog
                     }
@@ -86,12 +81,5 @@ public class QuizActivity extends AppCompatActivity {
 
     void generateList(ArrayList<Qcm> list) {
         binding.listview.setAdapter(new AdapterQuiz(QuizActivity.this, list));
-//        binding.listview.setClickable(true);
-//        binding.listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                details(list.get(i));
-//            }
-//        });
     }
 }
