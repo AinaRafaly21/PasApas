@@ -45,6 +45,8 @@ public class AdapterQuiz extends ArrayAdapter<Qcm> {
 //        imageView.setImageBitmap(Bitmap.createScaledBitmap(decodedByte, 120, 120, false));
 
         TextView textView = convertView.findViewById(R.id.reponse);
+        TextView question = convertView.findViewById(R.id.question);
+        question.setText(qcm.getQuestion());
 
         btn1 = convertView.findViewById(R.id.btn1);
         btn1.setText(qcm.getChoix().get(0));

@@ -1,12 +1,16 @@
 package com.example.pasapas.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pasapas.MainActivity;
 import com.example.pasapas.R;
 import com.example.pasapas.adapter.AdapterQuiz;
 import com.example.pasapas.databinding.ActivityQuizBinding;
@@ -36,6 +40,14 @@ public class QuizActivity extends AppCompatActivity {
         binding = ActivityQuizBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         progressIndicator = findViewById(R.id.circularQuiz);
+        Button button = findViewById(R.id.retour);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(QuizActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
         ParamQuiz paramQuiz = (ParamQuiz) getIntent().getSerializableExtra("paramQuiz");
         getQuiz(paramQuiz);
     }
