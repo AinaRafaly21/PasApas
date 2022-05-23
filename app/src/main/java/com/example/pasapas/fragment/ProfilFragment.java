@@ -2,6 +2,7 @@ package com.example.pasapas.fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,11 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.pasapas.MainActivity;
 import com.example.pasapas.R;
 import com.example.pasapas.activity.Login;
 import com.example.pasapas.adapter.AdapterEnfant;
+import com.example.pasapas.model.Enfants;
 import com.example.pasapas.model.Users;
 import com.example.pasapas.tools.Tools;
 
@@ -73,9 +76,18 @@ public class ProfilFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_profil, container, false);
+        setKids(view);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profil, container, false);
+        return view;
     }
 
-
+    void setKids(View view) {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("userIdentity", Context.MODE_PRIVATE);
+        Integer indexKids = sharedPreferences.getInt("index", 0);
+        Users users = Tools.getUser(sharedPreferences);
+        Enfants enfants = users.getEnfants().get(indexKids);
+        TextView textView = view.findViewById(R.id.nomAccueil);
+        textView.setText(enfants.getNom() + " - " + enfants.getAge() + " ans");
+    }
 }

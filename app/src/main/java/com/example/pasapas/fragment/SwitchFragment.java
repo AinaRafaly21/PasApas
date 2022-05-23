@@ -50,13 +50,14 @@ public class SwitchFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Intent intent = new Intent(getContext(), EnfantsActivity.class);
-        startActivity(intent);
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Intent intent = new Intent(getContext(), EnfantsActivity.class);
+        startActivity(intent);
+        getActivity().finish();
     }
 
     @Override

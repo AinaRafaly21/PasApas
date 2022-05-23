@@ -12,6 +12,7 @@ import com.example.pasapas.tools.Tools;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -44,6 +45,14 @@ public class EnfantsActivity extends AppCompatActivity {
                 create();
             }
         });
+
+        Button logout = findViewById(R.id.deconnexion);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logout();
+            }
+        });
     }
 
     void create(){
@@ -55,5 +64,15 @@ public class EnfantsActivity extends AppCompatActivity {
         Intent intent = new Intent(EnfantsActivity.this, MainActivity.class);
         Tools.setKids(getSharedPreferences("userIdentity", Context.MODE_PRIVATE), i);
         startActivity(intent);
+    }
+
+    void logout(){
+        SharedPreferences sharedPreferences = getSharedPreferences("userIdentity", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.commit();
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+        finish();
     }
 }
