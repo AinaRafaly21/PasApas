@@ -1,5 +1,7 @@
 package com.example.pasapas.adapter;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -73,11 +75,14 @@ public class AdapterQuiz extends ArrayAdapter<Qcm> {
         return super.getView(position, convertView, parent);
     }
 
-    void response(Qcm qcm, String choix, TextView textView) {
-        textView.setVisibility(View.VISIBLE);
+    void response(Qcm qcm, String choix, View view) {
+//        textView.setVisibility(View.VISIBLE);
         System.out.println("Reponse = " + qcm.getReponse() + " / Choix = " + choix);
-        if(qcm.getReponse().compareToIgnoreCase(choix) == 0) textView.setText("Bravo, c'est vrai!!");
-        else textView.setText("Ooh non, c'est faux");
+        Dialog dialog = new Dialog(view.getContext());
+        if(qcm.getReponse().compareToIgnoreCase(choix) == 0) dialog.setContentView(R.layout.true_layout);
+        else dialog.setContentView(R.layout.false_layout);
+
+        dialog.show();
     }
 }
 
