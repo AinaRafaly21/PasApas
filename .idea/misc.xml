@@ -10,13 +10,10 @@
         <entry key="..\:/PasApas/app/src/main/res/layout/activity_inscription.xml" value="0.23645833333333333" />
         <entry key="..\:/PasApas/app/src/main/res/layout/activity_login.xml" value="0.22327898550724637" />
         <entry key="..\:/PasApas/app/src/main/res/layout/activity_main.xml" value="0.23645833333333333" />
-        <entry key="..\:/PasApas/app/src/main/res/layout/activity_quiz.xml" value="0.23645833333333333" />
-        <entry key="..\:/PasApas/app/src/main/res/layout/activity_splash_screen.xml" value="0.264" />
+        <entry key="..\:/PasApas/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/PasApas/app/src/main/res/layout/fragment_cours.xml" value="0.23645833333333333" />
         <entry key="..\:/PasApas/app/src/main/res/layout/fragment_profil.xml" value="0.23645833333333333" />
         <entry key="..\:/PasApas/app/src/main/res/layout/layout_navigation_header.xml" value="0.1" />
-        <entry key="..\:/PasApas/app/src/main/res/layout/list_cours.xml" value="0.23645833333333333" />
-        <entry key="..\:/PasApas/app/src/main/res/layout/list_quiz.xml" value="0.23645833333333333" />
         <entry key="..\:/PasApas/app/src/main/res/menu/navigation_menu.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/drawable/bg_round.xml" value="0.1785" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/drawable/shadow.xml" value="0.1505" />
@@ -29,6 +26,8 @@
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/activity_video.xml" value="0.16" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/false_layout.xml" value="0.16145833333333334" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/fragment_cours.xml" value="0.1" />
+        <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/fragment_ecm.xml" value="0.176" />
+        <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/fragment_switch.xml" value="0.15572916666666667" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/layout_navigation_header.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/list_cours.xml" value="0.1" />
         <entry key="..\:/Users/26134/Documents/Cours_M1/Rojo/Android_project/PasApas/app/src/main/res/layout/list_enfant.xml" value="0.1" />

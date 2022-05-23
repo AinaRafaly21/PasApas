@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Pas à pas</string>
-    <string name="profil">Profil</string>
+    <string name="profil">Accueil</string>
     <string name="cours">Cours</string>
-    <string name="ecm">Ecm</string>
-    <string name="deconnection">Deconnexion</string>
+    <string name="ecm">Education morale</string>
+    <string name="deconnection">Changer de compte</string>
     <string name="autres">Autres</string>
     <string name="pas_pas">Pas à pas</string>
     <!-- TODO: Remove or change this placeholder text -->

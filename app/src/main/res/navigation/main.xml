@@ -8,11 +8,21 @@
     <fragment
         android:id="@+id/menuProfil"
         android:name="com.example.pasapas.fragment.ProfilFragment"
-        android:label="Profil"
+        android:label="Accueil"
         tools:layout="@layout/fragment_profil" />
     <fragment
         android:id="@+id/menuCours"
         android:name="com.example.pasapas.fragment.CoursFragment"
         android:label="Cours"
         tools:layout="@layout/fragment_cours" />
+    <fragment
+        android:id="@+id/menuEcm"
+        android:name="com.example.pasapas.fragment.EcmFragment"
+        android:label="Education morale"
+        tools:layout="@layout/fragment_ecm" />
+    <fragment
+        android:id="@+id/menuDeconnection"
+        android:name="com.example.pasapas.fragment.SwitchFragment"
+        android:label="Changement de compte"
+        tools:layout="@layout/fragment_switch" />
 </navigation>

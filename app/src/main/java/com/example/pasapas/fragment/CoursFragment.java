@@ -1,6 +1,6 @@
 package com.example.pasapas.fragment;
 
-import android.app.ProgressDialog;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,11 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.cardview.widget.CardView;
+
 import androidx.fragment.app.Fragment;
 
 import com.example.pasapas.R;
@@ -23,13 +22,12 @@ import com.example.pasapas.service.GlobalService;
 import com.example.pasapas.tools.ResponseArray;
 import com.example.pasapas.tools.RetrofitClientInstance;
 
-import com.google.android.material.card.MaterialCardView;
+
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
