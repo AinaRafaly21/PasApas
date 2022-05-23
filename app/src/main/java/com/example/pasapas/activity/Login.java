@@ -57,9 +57,9 @@ public class Login extends AppCompatActivity {
     void singin(String email, String password){
         final ProgressDialog progressDialog = new ProgressDialog(Login.this);
         progressDialog.setCancelable(false); // set cancelable to false
-        progressDialog.setTitle("Connexion"); //set Title
-        progressDialog.setMessage("Chargement ... "); // set message
         progressDialog.show(); // show progress dialog
+        progressDialog.setContentView(R.layout.loading); // set view to layout.xml
+        progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent); // set background to transparent
         if(Tools.validateMail(email) && Tools.validatePassword(password)) {
             System.out.println("Okee" + email);
             UserLogin use= new UserLogin(email, password);

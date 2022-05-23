@@ -51,9 +51,9 @@ public class CreationEnfant extends AppCompatActivity {
         if(Integer.valueOf(age) > 6) Toast.makeText(CreationEnfant.this, "Ooops, nous n'avons pas encore de cours pour le plus de 6ans.", Toast.LENGTH_LONG).show();
         final ProgressDialog progressDialog = new ProgressDialog(CreationEnfant.this);
         progressDialog.setCancelable(false); // set cancelable to false
-        progressDialog.setTitle("Connexion"); //set Title
-        progressDialog.setMessage("Chargement ... "); // set message
         progressDialog.show(); // show progress dialog
+        progressDialog.setContentView(R.layout.loading); // set view to layout.xml
+        progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent); // set background to transparent
         if(!TextUtils.isEmpty(nom) && Integer.valueOf(age) > 0) {
             Enfants enfants = new Enfants(nom, Integer.valueOf(age));
             SharedPreferences sharedPreferences= this.getSharedPreferences("userIdentity", Context.MODE_PRIVATE);
