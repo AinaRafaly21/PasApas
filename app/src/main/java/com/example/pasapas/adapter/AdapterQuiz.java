@@ -1,9 +1,6 @@
 package com.example.pasapas.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +12,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.example.pasapas.R;
 import com.example.pasapas.model.Qcm;
 
 import java.util.ArrayList;
-
 
 
 public class AdapterQuiz extends ArrayAdapter<Qcm> {
@@ -36,13 +33,12 @@ public class AdapterQuiz extends ArrayAdapter<Qcm> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_quiz, parent,false);
         }
 
-//        ImageView imageView = convertView.findViewById(R.id.imageQuiz);
-//        System.out.println("Qcm == " + qcm);
-//        byte[] decodedString = Base64.decode(qcm.getImage().getBytes(), Base64.DEFAULT);
-//        System.out.println("Decode ** " + decodedString);
-//        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-//        System.out.println("Bitmap ** " + decodedByte);
-//        imageView.setImageBitmap(Bitmap.createScaledBitmap(decodedByte, 120, 120, false));
+        ImageView imageView = convertView.findViewById(R.id.imageQuiz);
+        Glide.with(convertView)
+                .load(qcm.getImage())
+                .placeholder(R.color.black)
+                .override(300, 200)
+                .into(imageView);
 
         TextView textView = convertView.findViewById(R.id.reponse);
         TextView question = convertView.findViewById(R.id.question);
