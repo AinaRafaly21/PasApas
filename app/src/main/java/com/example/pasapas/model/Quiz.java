@@ -60,14 +60,4 @@ public class Quiz {
         this.qcm = qcm;
     }
 
-    @Override
-    public String toString() {
-        return "Quiz{" +
-                "cours='" + nom + '\'' +
-                ", categorie='" + categorie + '\'' +
-                ", niveau=" + niveau +
-                ", score_min=" + score_min +
-                ", qcm=" + qcm +
-                '}';
-    }
 }

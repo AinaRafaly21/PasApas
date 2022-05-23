@@ -60,17 +60,13 @@ public class CreationEnfant extends AppCompatActivity {
             Users user = Tools.getUser(sharedPreferences);
             user.addEnfant(enfants);
             String token = sharedPreferences.getString("token", null);
-            System.out.println("*** TOKEN = " +  token);
             UserService userservice = RetrofitClientInstance.getRetrofitInstance().create(UserService.class);
             userservice.update(token, user).enqueue(
                     new Callback<ResponseFormat>() {
                         @Override
                         public void onResponse(Call<ResponseFormat> call, Response<ResponseFormat> response) {
                             progressDialog.dismiss(); //dismiss progress dialog
-                            System.out.println(response.body().toString());
                             if(response.body().getCode() == 200) {
-//                            text.setText(response.body().code);
-                                System.out.println("Body = " + response.body().getData().toString());
                                 Tools.setUser(sharedPreferences, response.body().getData());
                                 redirect();
                             }else {
@@ -81,7 +77,6 @@ public class CreationEnfant extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<ResponseFormat> call, Throwable t) {
                             // if error occurs in network transaction then we can get the error in this method.
-                            System.out.println(t.getMessage());
                             progressDialog.dismiss();
                             Toast.makeText(CreationEnfant.this, t.getMessage(), Toast.LENGTH_LONG).show(); //dismiss progress dialog
                         }

@@ -29,10 +29,8 @@ public class AdapterEnfant extends ArrayAdapter<Enfants> {
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_enfant, parent,false);
         }
-
         TextView nom = convertView.findViewById(R.id.nom);
         TextView age = convertView.findViewById(R.id.age);
-
         nom.setText(enfants.getNom());
         age.setText(enfants.getAge().toString() + " ans");
         return super.getView(position, convertView, parent);

@@ -13,9 +13,6 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -40,10 +37,8 @@ public class VideoActivity extends AppCompatActivity {
     }
 
     void setTilte(Cours cours) {
-
         TextView propos = findViewById(R.id.coursPropos);
         propos.setText(cours.getNom() + " - Niveau " + cours.getNiveau());
-
         TextView titre = findViewById(R.id.titreVideo);
         titre.setText(cours.getTitre());
     }
@@ -51,7 +46,6 @@ public class VideoActivity extends AppCompatActivity {
     void displayVideo(Cours cours) {
         YouTubePlayerView youTubePlayerView = findViewById(R.id.playerView);
         getLifecycle().addObserver(youTubePlayerView);
-
         youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
             @Override
             public void onReady(@NonNull YouTubePlayer youTubePlayer) {

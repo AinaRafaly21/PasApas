@@ -28,11 +28,4 @@ public class UserLogin {
         this.motdepasse = motdepasse;
     }
 
-    @Override
-    public String toString() {
-        return "Login{" +
-                "email='" + email + '\'' +
-                ", motdepasse='" + motdepasse + '\'' +
-                '}';
-    }
 }

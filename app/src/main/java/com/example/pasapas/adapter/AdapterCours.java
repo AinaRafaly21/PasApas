@@ -28,13 +28,10 @@ public class AdapterCours extends ArrayAdapter<Cours> {
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_cours, parent,false);
         }
-
         TextView niveau = convertView.findViewById(R.id.niveauCours);
         TextView categorie = convertView.findViewById(R.id.catCours);
-
         niveau.setText(cours.getTitre());
         categorie.setText(cours.getNom() + " - Niveau " + cours.getNiveau());
-
         return super.getView(position, convertView, parent);
     }
 }

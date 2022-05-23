@@ -42,7 +42,6 @@ public class Login extends AppCompatActivity {
                 redirectToSignup();
             }
         });
-
         EditText email = findViewById(R.id.inputMail);
         EditText password = findViewById(R.id.inputPassword);
         Button button = findViewById(R.id.button);
@@ -61,7 +60,6 @@ public class Login extends AppCompatActivity {
         progressDialog.setContentView(R.layout.loading); // set view to layout.xml
         progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent); // set background to transparent
         if(Tools.validateMail(email) && Tools.validatePassword(password)) {
-            System.out.println("Okee" + email);
             UserLogin use= new UserLogin(email, password);
             UserService userservice = RetrofitClientInstance.getRetrofitInstance().create(UserService.class);
             userservice.login(use).enqueue(
@@ -69,10 +67,7 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<ResponseFormat> call, Response<ResponseFormat> response) {
                             progressDialog.dismiss(); //dismiss progress dialog
-                            System.out.println(response.body().toString());
                             if(response.body().getCode() == 200) {
-//                            text.setText(response.body().code);
-                                System.out.println("Body = " + response.body().getData().toString());
                                 Gson gson = new Gson();
                                 Users user = gson.fromJson(response.body().getData(), Users.class);
                                 saveToken(user.getToken(), response.body().getData());
@@ -85,7 +80,6 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<ResponseFormat> call, Throwable t) {
                             // if error occurs in network transaction then we can get the error in this method.
-                            System.out.println(t.getMessage());
                             progressDialog.dismiss();
                             Toast.makeText(Login.this, t.getMessage(), Toast.LENGTH_LONG).show(); //dismiss progress dialog
                         }
@@ -109,7 +103,6 @@ public class Login extends AppCompatActivity {
 
     void saveToken(String token, JsonObject user) {
         token = "Bearer " + token;
-        System.out.println("*** TOKEN LOGIN = " +  token);
         SharedPreferences sharedPreferences= this.getSharedPreferences("userIdentity", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("token", token);

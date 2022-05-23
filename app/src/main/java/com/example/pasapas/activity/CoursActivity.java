@@ -54,16 +54,12 @@ public class CoursActivity extends AppCompatActivity {
         Users users = Tools.getUser(sharedPreferences);
         Enfants enfants = users.getEnfants().get(indexKids);
         ParamCours paramCours = new ParamCours(cours, enfants.getCategorie());
-        System.out.println("ParamCours = " + paramCours);
         GlobalService globalService = RetrofitClientInstance.getRetrofitInstance().create(GlobalService.class);
         globalService.course(token, paramCours).enqueue(
                 new Callback<ResponseArray>() {
                     @Override
                     public void onResponse(Call<ResponseArray> call, Response<ResponseArray> response) {
-                        System.out.println(response.body().toString());
                         if(response.body().getCode() == 200) {
-//                            text.setText(response.body().code);
-                            System.out.println("Body = " + response.body().getData().toString());
                             Gson gson = new Gson();
                             Type type = new TypeToken<List<Cours>>(){}.getType();
                             List<Cours> array = gson.fromJson(response.body().getData(), type);
@@ -78,7 +74,6 @@ public class CoursActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<ResponseArray> call, Throwable t) {
                         // if error occurs in network transaction then we can get the error in this method.
-                        System.out.println(t.getMessage());
                         progressIndicator.hide();
                         Toast.makeText(CoursActivity.this, t.getMessage(), Toast.LENGTH_LONG).show(); //dismiss progress dialog
                     }

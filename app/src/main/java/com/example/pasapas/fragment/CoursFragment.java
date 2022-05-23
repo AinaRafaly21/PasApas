@@ -100,10 +100,7 @@ public class CoursFragment extends Fragment {
                 new Callback<ResponseArray>() {
                     @Override
                     public void onResponse(Call<ResponseArray> call, Response<ResponseArray> response) {
-                        System.out.println(response.body().toString());
                         if(response.body().getCode() == 200) {
-//                            text.setText(response.body().code);
-                            System.out.println("Body = " + response.body().getData().toString());
                             Gson gson = new Gson();
                             Type type = new TypeToken<List<String>>(){}.getType();
                             List<String> array = gson.fromJson(response.body().getData(), type);
@@ -118,7 +115,6 @@ public class CoursFragment extends Fragment {
                     @Override
                     public void onFailure(Call<ResponseArray> call, Throwable t) {
                         // if error occurs in network transaction then we can get the error in this method.
-                        System.out.println(t.getMessage());
                         progressIndicator.hide();
                         Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_LONG).show(); //dismiss progress dialog
                     }
@@ -126,7 +122,6 @@ public class CoursFragment extends Fragment {
     }
 
     void details(String nom) {
-        System.out.println("Details cours ** " + nom);
         Intent intent = new Intent(getActivity(), CoursActivity.class);
         intent.putExtra("nomCours", nom);
         startActivity(intent);
@@ -136,7 +131,6 @@ public class CoursFragment extends Fragment {
         ListView listView = view.findViewById(R.id.listMatieres);
         listView.setAdapter(new AdapterMatiere(getContext(),list));
         listView.setClickable(true);
-        System.out.println("ListView == " + listView.toString());
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

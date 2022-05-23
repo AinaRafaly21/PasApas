@@ -20,7 +20,6 @@ public class AdapterMatiere extends ArrayAdapter<String> {
 
     public AdapterMatiere(Context context, List<String> array) {
         super(context, R.layout.list_matiere, R.id.matieres, array);
-        System.out.println("Array == " + array.toString());
     }
 
     @NonNull
@@ -30,7 +29,6 @@ public class AdapterMatiere extends ArrayAdapter<String> {
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_matiere, parent,false);
         }
-
         TextView textView = convertView.findViewById(R.id.nomMatiere);
         textView.setText(mat);
         return super.getView(position, convertView, parent);

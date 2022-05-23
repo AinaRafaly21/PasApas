@@ -41,13 +41,4 @@ public class ParamQuiz implements Serializable {
     public void setNiveau(Integer niveau) {
         this.niveau = niveau;
     }
-
-    @Override
-    public String toString() {
-        return "Param{" +
-                "nom='" + nom + '\'' +
-                ", categorie='" + categorie + '\'' +
-                ", niveau=" + niveau +
-                '}';
-    }
 }

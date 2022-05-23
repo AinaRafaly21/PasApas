@@ -39,13 +39,4 @@ public class ResponseArray {
     public void setData(JsonArray data) {
         this.data = data;
     }
-
-    @Override
-    public String toString() {
-        return "ResponseArray{" +
-                "message='" + message + '\'' +
-                ", code=" + code +
-                ", data=" + data +
-                '}';
-    }
 }

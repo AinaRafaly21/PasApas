@@ -30,11 +30,4 @@ public class Niveau implements Serializable {
         this.score = score;
     }
 
-    @Override
-    public String toString() {
-        return "Niveau{" +
-                "cours='" + cours + '\'' +
-                ", score=" + score +
-                '}';
-    }
 }

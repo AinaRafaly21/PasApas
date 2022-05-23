@@ -60,14 +60,4 @@ public class Cours implements Serializable {
         this.titre = titre;
     }
 
-    @Override
-    public String toString() {
-        return "Cours{" +
-                "nom='" + nom + '\'' +
-                ", titre='" + titre + '\'' +
-                ", categorie='" + categorie + '\'' +
-                ", niveau=" + niveau +
-                ", url_video='" + url_video + '\'' +
-                '}';
-    }
 }
