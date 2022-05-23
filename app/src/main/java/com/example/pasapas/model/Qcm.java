@@ -3,6 +3,7 @@ package com.example.pasapas.model;
 import java.util.ArrayList;
 
 public class Qcm {
+//    String image;
     String question;
     String reponse;
     ArrayList<String> choix;
@@ -10,11 +11,20 @@ public class Qcm {
     public Qcm() {
     }
 
-    public Qcm(String question, String reponse, ArrayList<String> choix) {
+    public Qcm(String image, String question, String reponse, ArrayList<String> choix) {
+//        this.image = image;
         this.question = question;
         this.reponse = reponse;
         this.choix = choix;
     }
+
+//    public String getImage() {
+//        return image;
+//    }
+
+//    public void setImage(String image) {
+//        this.image = image;
+//    }
 
     public String getQuestion() {
         return question;
@@ -43,7 +53,8 @@ public class Qcm {
     @Override
     public String toString() {
         return "Qcm{" +
-                "question='" + question + '\'' +
+//                "image='" + image + '\'' +
+                ", question='" + question + '\'' +
                 ", reponse='" + reponse + '\'' +
                 ", choix=" + choix +
                 '}';
