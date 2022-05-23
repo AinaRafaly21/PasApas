@@ -1,8 +1,15 @@
 package com.example.pasapas.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +49,11 @@ public class Inscription extends AppCompatActivity {
 
     void singup(String email, String password){
         if(Tools.validateMail(email) && Tools.validatePassword(password)) {
+            final ProgressDialog progressDialog = new ProgressDialog(Inscription.this);
+            progressDialog.setCancelable(false); // set cancelable to false
+            progressDialog.setTitle("Connexion"); //set Title
+            progressDialog.setMessage("Chargement ... "); // set message
+            progressDialog.show();
             UserLogin use= new UserLogin(email, password);
             UserService userservice = RetrofitClientInstance.getRetrofitInstance().create(UserService.class);
             userservice.singup(use).enqueue(
@@ -52,9 +64,12 @@ public class Inscription extends AppCompatActivity {
                             if(response.body().getCode() == 200) {
 //                            text.setText(response.body().code);
 //                                System.out.println(response.body().getData().toString());
-                                Toast.makeText(Inscription.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+//                                Toast.makeText(Inscription.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                                progressDialog.dismiss();
+                                notif();
                                 redirect();
                             }else {
+                                progressDialog.dismiss();
                                 Toast.makeText(Inscription.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
                             }
                         }
@@ -62,6 +77,7 @@ public class Inscription extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<ResponseFormat> call, Throwable t) {
                             // if error occurs in network transaction then we can get the error in this method.
+                            progressDialog.dismiss();
                             Toast.makeText(Inscription.this, t.getMessage(), Toast.LENGTH_LONG).show(); //dismiss progress dialog
                         }
                     });
@@ -74,6 +90,37 @@ public class Inscription extends AppCompatActivity {
     void redirect(){
         Intent intent = new Intent(Inscription.this, Login.class);
         startActivity(intent);
+    }
+
+    private void createNotificationChannnel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "studentChannel";
+            String description = "Channel for student Notification";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("educA", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    void notif() {
+        createNotificationChannnel();
+        Intent notificationIntent = new Intent(this, Login.class);
+        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this,0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "educA")
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle("Pas à pas")
+                .setContentText("Inscription réussie, veuillez vous connecter")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        notificationManager.notify(100 , builder.build());
     }
 
 }
