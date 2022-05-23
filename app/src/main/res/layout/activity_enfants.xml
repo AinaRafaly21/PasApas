@@ -4,47 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.EnfantsActivity">
+    tools:context=".activity.EnfantsActivity"
+    android:background="@drawable/bg">
     <!-- res/layout/example_activity.xml -->
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="106dp"
-            android:layout_height="44dp"
-            android:text="+ ajout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.052"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.045" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="106dp"
+        android:layout_height="44dp"
+        android:text="+ ajout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="219dp"
-            android:layout_height="39dp"
-            android:text="Créer Profil Enfant"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.848"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.052" />
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="172dp"
+        android:layout_height="40dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Créer Profil Enfant"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="306dp"
-            android:layout_height="60dp"
-            android:text="Profils exsitants"
-            android:textSize="40sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.175" />
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="306dp"
+        android:layout_height="60dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Profils exsitants"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.171" />
 
-        <View
+    <View
             android:id="@+id/divider"
             android:layout_width="409dp"
             android:layout_height="1dp"
