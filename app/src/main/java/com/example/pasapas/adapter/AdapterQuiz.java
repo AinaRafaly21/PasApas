@@ -38,7 +38,7 @@ public class AdapterQuiz extends ArrayAdapter<Qcm> {
         ImageView imageView = convertView.findViewById(R.id.imageQuiz);
         Glide.with(convertView)
                 .load(qcm.getImage())
-                .placeholder(R.color.black)
+                .placeholder(R.drawable.fond)
                 .override(300, 200)
                 .into(imageView);
 
