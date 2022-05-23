@@ -51,9 +51,9 @@ public class Inscription extends AppCompatActivity {
         if(Tools.validateMail(email) && Tools.validatePassword(password)) {
             final ProgressDialog progressDialog = new ProgressDialog(Inscription.this);
             progressDialog.setCancelable(false); // set cancelable to false
-            progressDialog.setTitle("Connexion"); //set Title
-            progressDialog.setMessage("Chargement ... "); // set message
             progressDialog.show();
+            progressDialog.setContentView(R.layout.loading); // set view to layout.xml
+            progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent); // set background to transparent
             UserLogin use= new UserLogin(email, password);
             UserService userservice = RetrofitClientInstance.getRetrofitInstance().create(UserService.class);
             userservice.singup(use).enqueue(
