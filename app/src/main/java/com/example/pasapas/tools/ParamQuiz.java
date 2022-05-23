@@ -1,6 +1,8 @@
 package com.example.pasapas.tools;
 
-public class ParamQuiz {
+import java.io.Serializable;
+
+public class ParamQuiz implements Serializable {
     String nom;
     String categorie;
     Integer niveau;

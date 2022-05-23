@@ -41,7 +41,7 @@ public class CoursActivity extends AppCompatActivity {
         binding = ActivityCoursBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         TextView textView = findViewById(R.id.textCours);
-        textView.setText("Cours de " + getIntent().getStringExtra("nomCours"));
+        textView.setText(getIntent().getStringExtra("nomCours"));
         progressIndicator = findViewById(R.id.circularCours);
         getCourse(getIntent().getStringExtra("nomCours"));
 

@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Pas à pas</string>
-    <string name="profil">profil</string>
-    <string name="cours">cours</string>
-    <string name="ecm">ecm</string>
-    <string name="deconnection">deconnection</string>
-    <string name="autres">autres</string>
+    <string name="profil">Profil</string>
+    <string name="cours">Cours</string>
+    <string name="ecm">Ecm</string>
+    <string name="deconnection">Deconnexion</string>
+    <string name="autres">Autres</string>
     <string name="pas_pas">Pas à pas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
