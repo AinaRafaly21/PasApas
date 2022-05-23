@@ -31,6 +31,7 @@
             android:textSize="22sp"
             android:textStyle="italic"
             android:textColor="@color/black" />
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
